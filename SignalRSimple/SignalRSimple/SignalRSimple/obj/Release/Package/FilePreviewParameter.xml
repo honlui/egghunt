@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="honlui-001-site1" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\luih\\Source\\Repos\\egghunt\\SignalRSimple\\SignalRSimple\\SignalRSimple\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\luih\\Source\\Repos\\egghunt\\SignalRSimple\\SignalRSimple\\SignalRSimple\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="DefaultConnection_ConnectionString" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\luih\\Source\\Repos\\egghunt\\SignalRSimple\\SignalRSimple\\SignalRSimple\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="EggHuntEntities-Web.config Connection String" description="" value="metadata=res://*/EF.EggHunt.csdl|res://*/EF.EggHunt.ssdl|res://*/EF.EggHunt.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=sql5021.site4now.net;Initial Catalog=DB_A37872_egghunt;Persist Security Info=True;User ID=DB_A37872_egghunt_admin;Password=-1jh_0ct@N5b2i9;MultipleActiveResultSets=True;Application Name=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\luih\\Source\\Repos\\egghunt\\SignalRSimple\\SignalRSimple\\SignalRSimple\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='EggHuntEntities']/@connectionString" />
+  </parameter>
+</parameters>
