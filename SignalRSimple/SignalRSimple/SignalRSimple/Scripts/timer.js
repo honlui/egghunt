@@ -4,7 +4,8 @@
     // Setting logging to true so that we can see whats happening in the browser console log. [OPTIONAL]
     $.connection.hub.logging = true;
     // Start the hub
-    $.connection.hub.start();
+    $.connection.hub.start();    
+
 
     // This is the client method which is being called inside the MyHub constructor method every 3 seconds
     myHub.client.SendServerTime = function (serverTime) {
@@ -26,5 +27,11 @@
     });
     $("#btnGroupC").click(function () {
         myHub.server.increment("GroupC");
+    });
+
+
+    // Load the current counts when the hub is ready
+    $.connection.hub.start().done(function () {
+        myHub.server.hello();
     });
 }());
