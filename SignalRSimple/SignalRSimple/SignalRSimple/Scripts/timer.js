@@ -17,9 +17,14 @@
         $("#message").text(message);
     };
 
-    //Button click jquery handler
-    $("#btnClick").click(function () {
-        // Call SignalR hub method
-        myHub.server.hello();
+    //Button click jquery handlers
+    $("#btnGroupA").click(function () {
+        myHub.server.increment("GroupA");
+    });
+    $("#btnGroupB").click(function () {
+        myHub.server.increment("GroupB");
+    });
+    $("#btnGroupC").click(function () {
+        myHub.server.increment("GroupC");
     });
 }());

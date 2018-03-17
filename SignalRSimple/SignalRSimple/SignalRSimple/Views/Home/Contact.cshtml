@@ -2,14 +2,15 @@
     ViewBag.Title = "Contact";
 }
 
-@section scripts{
-    <script src="~/Scripts/jquery.signalR-2.2.3.js"></script>
-    <script src="~/SignalR/hubs"></script>
-    <script src="~/Scripts/timer.js"></script>
-}
-<span id="newTime"></span>
-<input type="button" id="btnClick" value="Send Message" /><br />
-<span id="message"></span>
+
+<br /><br />
+<span id="newTime"></span><br />
+<span id="message"></span><br />
+
+<input type="button" id="btnGroupA" value="+ GroupA" /><br />
+<input type="button" id="btnGroupB" value="+ GroupB" /><br />
+<input type="button" id="btnGroupC" value="+ GroupC" /><br />
+
 
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
@@ -25,3 +26,12 @@
     <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
     <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
 </address>
+@section scripts{
+    <script src="~/Scripts/jquery.signalR-2.2.3.js"></script>
+    <script src="~/SignalR/hubs"></script>
+    <script src="~/Scripts/timer.js"></script>
+
+    <script>
+        $.connection.counterHub.server.hello();
+    </script>
+}
