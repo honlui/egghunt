@@ -140,3 +140,4 @@ C:\Users\luih\Source\Repos\egghunt\SignalRSimple\SignalRSimple\SignalRSimple\bin
 C:\Users\luih\Source\Repos\egghunt\SignalRSimple\SignalRSimple\SignalRSimple\bin1\Microsoft.Owin.Security.Google.xml
 C:\Users\luih\Source\Repos\egghunt\SignalRSimple\SignalRSimple\SignalRSimple\bin1\Microsoft.Owin.Security.Twitter.xml
 C:\Users\luih\Source\Repos\egghunt\SignalRSimple\SignalRSimple\SignalRSimple\bin1\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\luih\Source\Repos\egghunt\SignalRSimple\SignalRSimple\SignalRSimple\obj\Release\SignalRSimple.csprojResolveAssemblyReference.cache
