@@ -60,6 +60,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -178,6 +180,27 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="EF\Count.cs">
+      <DependentUpon>EggHunt.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\EggHunt.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EggHunt.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\EggHunt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EggHunt.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\EggHunt.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EggHunt.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Login.cs">
+      <DependentUpon>EggHunt.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -191,12 +214,29 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="EF\EggHunt.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EggHunt.edmx</DependentUpon>
+      <LastGenOutput>EggHunt.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EF\EggHunt.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EggHunt.edmx</DependentUpon>
+      <LastGenOutput>EggHunt.cs</LastGenOutput>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="EF\EggHunt.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EggHunt.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="EF\EggHunt.edmx.diagram">
+      <DependentUpon>EggHunt.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -257,6 +297,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
