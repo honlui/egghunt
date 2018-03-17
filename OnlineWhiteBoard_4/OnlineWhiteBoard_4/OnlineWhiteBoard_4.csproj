@@ -150,6 +150,7 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SignalR\HuntCounterHub.cs" />
     <Compile Include="SignalR\WhiteboardHub.cs" />
   </ItemGroup>
   <ItemGroup>
