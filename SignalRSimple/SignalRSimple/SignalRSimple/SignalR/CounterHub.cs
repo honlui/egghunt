@@ -22,7 +22,7 @@ namespace SignalRSimple.SignalR
             var a = EHEntities.Counts.ToList();
             foreach (var item in a)
             {
-                output += item.GroupName + ": " + item.Value.ToString() + " | ";
+                output += item.GroupName + ": " + item.Value.ToString() + " ; ";
             }
             if (!string.IsNullOrEmpty(output))
             {
@@ -33,8 +33,6 @@ namespace SignalRSimple.SignalR
             {
                 Clients.All.hello("Exception occurred!!");
             }
-
-
         }
 
         public void Increment(Groups GroupName)
@@ -71,18 +69,18 @@ namespace SignalRSimple.SignalR
         {
             // Create a Long running task to do an infinite loop which will keep sending the server time
             // to the clients every 3 seconds.
-            //var taskTimer = Task.Factory.StartNew(async () =>
-            //{
-            //    while (true)
-            //    {
-            //        string timeNow = DateTime.Now.ToString();
-            //        //Sending the server time to all the connected clients on the client method SendServerTime()
-            //        Clients.All.SendServerTime(timeNow);
-            //        //Delaying by 3 seconds.
-            //        await Task.Delay(3000);
-            //    }
-            //}, TaskCreationOptions.LongRunning
-            //    );
+            var taskTimer = Task.Factory.StartNew(async () =>
+            {
+                while (true)
+                {
+                    string timeNow = DateTime.Now.ToString();
+                    //Sending the server time to all the connected clients on the client method SendServerTime()
+                    Clients.All.SendServerTime(timeNow);
+                    //Delaying by 3 seconds.
+                    await Task.Delay(3000);
+                }
+            }, TaskCreationOptions.LongRunning
+                );
         }
     }
 }
