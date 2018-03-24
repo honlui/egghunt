@@ -35,9 +35,14 @@ namespace SignalRSimple.SignalR
             }
         }
 
-        public void Increment(Groups GroupName)
-        {
+        private void AddGroupCount(Groups GroupName, int value) {
+            if (0 == value)
+            {
+                return;
+            }
+
             string _grp = "";
+
             if (GroupName == Groups.GroupA)
             {
                 _grp = "GroupA";
@@ -59,16 +64,29 @@ namespace SignalRSimple.SignalR
             Count result = EHEntities.Counts.Where(x => _grp == x.GroupName).First();
             if (result != null)
             {
-                result.Value = result.Value + 1;
+                result.Value = result.Value + value;
                 EHEntities.SaveChanges();
                 Hello();
+            }
+        }
+
+        public void Increment(Groups GroupName)
+        {
+            AddGroupCount(GroupName, 1);
+        }
+
+        public void Decrement(Groups GroupName, string Token)
+        {
+            if ("aoiuajPYUQ4J;L18793214hja" == Token)
+            {
+                AddGroupCount(GroupName, -1);
             }
         }
 
         public CounterHub()
         {
             // Create a Long running task to do an infinite loop which will keep sending the server time
-            // to the clients every 3 seconds.
+            // to the clients every 3 seconds. This acts effectively as a keep-alive notification for users.
             var taskTimer = Task.Factory.StartNew(async () =>
             {
                 while (true)

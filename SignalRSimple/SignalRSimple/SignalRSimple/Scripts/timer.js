@@ -29,6 +29,17 @@
         myHub.server.increment("GroupC");
     });
 
+    $("#btnAdminGroupA").click(function () {
+        myHub.server.decrement("GroupA","aoiuajPYUQ4J;L18793214hja");
+    });
+    $("#btnAdminGroupB").click(function () {
+        myHub.server.decrement("GroupB","aoiuajPYUQ4J;L18793214hja");
+    });
+    $("#btnAdminGroupC").click(function () {
+        myHub.server.decrement("GroupC", "aoiuajPYUQ4J;L18793214hja");
+    });
+
+
 
     // Load the current counts when the hub is ready
     $.connection.hub.start().done(function () {
