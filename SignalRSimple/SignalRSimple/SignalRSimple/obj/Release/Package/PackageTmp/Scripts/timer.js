@@ -34,6 +34,7 @@
         $("#pGroupC").text(CCount);
 
         //when the count is within the warning range of the limit, draw attention to the value
+        // todo: refactor this junk...
         if (ACount >= (ALimit - WarnLimit)) {
             $("#pGroupA").css("font-weight", "bold");
             var _str = $("#pGroupA").text();

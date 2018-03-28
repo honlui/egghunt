@@ -86,12 +86,13 @@ namespace SignalRSimple.SignalR
         public CounterHub()
         {
             // Create a Long running task to do an infinite loop which will keep sending the server time
-            // to the clients every 3 seconds. This acts effectively as a keep-alive notification for users.
+            // to the clients every 3 seconds. This acts effectively as a keep-alive notification for users.            
             var taskTimer = Task.Factory.StartNew(async () =>
             {
                 while (true)
                 {
-                    string timeNow = DateTime.Now.ToString();
+                    //string timeNow = DateTime.Now.ToString();
+                    string timeNow = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time")).ToString();
                     //Sending the server time to all the connected clients on the client method SendServerTime()
                     Clients.All.SendServerTime(timeNow);
                     //Delaying by 3 seconds.

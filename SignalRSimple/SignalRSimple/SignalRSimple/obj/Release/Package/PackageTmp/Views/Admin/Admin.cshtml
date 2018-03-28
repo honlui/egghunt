@@ -6,16 +6,13 @@
 <br />
 <h2>@ViewBag.Title</h2>
 <br />
+<span style="display:none;" id="message"></span>
+<input type="hidden" id="hidIn" value="aoiuajPYUQ4J;L18793214hja" />
+@*<h3>@ViewBag.Message</h3>*@
 
 <button type="button" id="newTime" class="btn btn-primary" title="" data-container="body" data-toggle="popover" data-placement="bottom" data-content="This is the last time the server sent an update to this page." data-original-title="Time of Last Update">?</button>
 
-<span id="newTime2"></span><br />
-<span style="display:none;" id="message"></span><br />
-<input type="hidden" id="hidIn" value="aoiuajPYUQ4J;L18793214hja" />
-
-@*<h3>@ViewBag.Message</h3>*@
-
-<br />
+<br /><br />
 
 <div style="position: relative;" class="align-items-center">
     <div id="divGroupA" class="card text-white bg-warning mb-3" style="max-width: 20rem; display: inline-block;">
@@ -46,7 +43,7 @@
     </div>
 </div>
 
-<input type="button" class="btn btn-primary" id="btnAdminGroupA" value="- Ages 0-2" />  <input type="button" class="btn btn-primary" id="btnAdminGroupB" value="- Ages 3-4" />  <input type="button" class="btn btn-primary" id="btnAdminGroupC" value="- Ages 5-6" /><br />
+<input type="button" class="btn btn-warning" id="btnAdminGroupA" value="- Ages 0-2" />  <input type="button" class="btn btn-secondary" id="btnAdminGroupB" value="- Ages 3-4" />  <input type="button" class="btn btn-info" id="btnAdminGroupC" value="- Ages 5-6" /><br />
 
 @section scripts{
     <script src="~/Scripts/jquery.signalR-2.2.3.js"></script>
