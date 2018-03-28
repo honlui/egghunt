@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Registration";
+    ViewBag.Title = "Adminstration";
 }
 
 
@@ -7,17 +7,13 @@
 <h2>@ViewBag.Title</h2>
 <br />
 
-<button type="button" id="newTime" class="btn btn-primary" title="" data-container="body" data-toggle="popover" data-placement="bottom" data-content="This is the last time the server sent an update to this page." data-original-title="Time of Last Update">
-    01/01/1900 12:00:01 AM
-</button>
+<button type="button" id="newTime" class="btn btn-primary" title="" data-container="body" data-toggle="popover" data-placement="bottom" data-content="This is the last time the server sent an update to this page." data-original-title="Time of Last Update">?</button>
 
+<span id="newTime2"></span><br />
 <span style="display:none;" id="message"></span><br />
+<input type="hidden" id="hidIn" value="aoiuajPYUQ4J;L18793214hja" />
 
-@*
-    <input type="button" id="btnGroupA" value="+ GroupA" />  <input type="button" id="btnGroupB" value="+ GroupB" />  <input type="button" id="btnGroupC" value="+ GroupC" /><br />
-
-    <h2>@ViewBag.Title.</h2>
-    <h3>@ViewBag.Message</h3>*@
+@*<h3>@ViewBag.Message</h3>*@
 
 <br />
 
@@ -49,6 +45,8 @@
         </div>
     </div>
 </div>
+
+<input type="button" class="btn btn-primary" id="btnAdminGroupA" value="- Ages 0-2" />  <input type="button" class="btn btn-primary" id="btnAdminGroupB" value="- Ages 3-4" />  <input type="button" class="btn btn-primary" id="btnAdminGroupC" value="- Ages 5-6" /><br />
 
 @section scripts{
     <script src="~/Scripts/jquery.signalR-2.2.3.js"></script>

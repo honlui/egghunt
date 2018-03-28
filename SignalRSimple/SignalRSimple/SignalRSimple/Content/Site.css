@@ -22,3 +22,12 @@ select,
 textarea {
     max-width: 280px;
 }
+/* Set text within cards to align center and larger font */
+.card-body p {
+    text-align: center;
+    font-size: 1.5em;    
+}
+
+.bs-component {
+    position:relative;
+}

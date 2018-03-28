@@ -22,11 +22,11 @@ namespace SignalRSimple.SignalR
             var a = EHEntities.Counts.ToList();
             foreach (var item in a)
             {
-                output += item.GroupName + ": " + item.Value.ToString() + " ; ";
+                output += item.GroupName + ":" + item.Value.ToString() + ";";
             }
             if (!string.IsNullOrEmpty(output))
             {
-                output = output.Substring(0, (output.Length - 3));
+                output = output.Substring(0, (output.Length - 1));
                 Clients.All.hello(output);
             }
             else
