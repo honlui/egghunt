@@ -13,7 +13,7 @@
         $("#newTime").text(serverTime);
     };
 
-    var ALimit = 88, BLimit = 152, CLimit = 35;
+    var ALimit = 100, BLimit = 120, CLimit = 60;
     var WarnLimit = 10;
     $("#pGroupATotal").text(ALimit);
     $("#pGroupBTotal").text(BLimit);
@@ -33,9 +33,9 @@
         var ACount = _g[0].split(':')[1];
         var BCount = _g[1].split(':')[1];
         var CCount = _g[2].split(':')[1];
-        $("#pGroupA").text(ACount);
-        $("#pGroupB").text(BCount);
-        $("#pGroupC").text(CCount);
+        //$("#pGroupA").text(ACount);
+        //$("#pGroupB").text(BCount);
+        //$("#pGroupC").text(CCount);
 
         $("a#lGroupACount").text(ACount);
         $("a#lGroupBCount").text(BCount);
@@ -44,31 +44,31 @@
         //when the count is within the warning range of the limit, draw attention to the value
         // todo: refactor this junk...
         if (ACount >= (ALimit - WarnLimit)) {
-            $("#pGroupA").css("font-weight", "bold");
-            var _str = $("#pGroupA").text();
+            $("#lGroupACount").css("font-weight", "bold");
+            var _str = $("#lGroupACount").text();
             _str = "! " + _str + " !";
-            $("#pGroupA").text(_str);
+            $("#lGroupACount").text(_str);
         }
         else {
-            $("#pGroupA").css("font-weight", "normal");
+            $("#lGroupACount").css("font-weight", "normal");
         }
         if (BCount >= (BLimit - WarnLimit)) {
-            $("#pGroupB").css("font-weight", "bold");
-            var _str = $("#pGroupB").text();
+            $("#lGroupBCount").css("font-weight", "bold");
+            var _str = $("#lGroupBCount").text();
             _str = "! " + _str + " !";
-            $("#pGroupB").text(_str);
+            $("#lGroupBCount").text(_str);
         }
         else {
-            $("#pGroupB").css("font-weight", "normal");
+            $("#lGroupBCount").css("font-weight", "normal");
         }
         if (CCount >= (CLimit - WarnLimit)) {
-            $("#pGroupC").css("font-weight", "bold");
+            $("#lGroupCCount").css("font-weight", "bold");
             var _str = $("#pGroupC").text();
             _str = "! " + _str + " !";
-            $("#pGroupC").text(_str);
+            $("#lGroupCCount").text(_str);
         }
         else {
-            $("#pGroupC").css("font-weight", "normal");
+            $("#lGroupCCount").css("font-weight", "normal");
         }
 
     }; 
