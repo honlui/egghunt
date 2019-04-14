@@ -19,6 +19,10 @@
     $("#pGroupBTotal").text(BLimit);
     $("#pGroupCTotal").text(CLimit);
 
+    $("a#lGroupALimit").text(ALimit);
+    $("a#lGroupBLimit").text(BLimit);
+    $("a#lGroupCLimit").text(CLimit);
+
     // Client method to broadcast the message
     myHub.client.hello = function (message) {
         //save message into hidden field for debugging
@@ -32,6 +36,10 @@
         $("#pGroupA").text(ACount);
         $("#pGroupB").text(BCount);
         $("#pGroupC").text(CCount);
+
+        $("a#lGroupACount").text(ACount);
+        $("a#lGroupBCount").text(BCount);
+        $("a#lGroupCCount").text(CCount);
 
         //when the count is within the warning range of the limit, draw attention to the value
         // todo: refactor this junk...
@@ -66,40 +74,64 @@
     }; 
         
     $(document).ready(function () {
-        //div click jquery handlers
-        $('#divGroupA').click(function (e) {
+        
+        //link click jquery handlers
+        $('#lGroupAI').click(function (e) {
             myHub.server.increment("GroupA");
         });
-        $('#divGroupB').click(function (e) {
+        $('#lGroupBI').click(function (e) {
             myHub.server.increment("GroupB");
         });
-        $('#divGroupC').click(function (e) {
+        $('#lGroupCI').click(function (e) {
             myHub.server.increment("GroupC");
-        });
-
-        //Button click jquery handlers
-        $("#btnGroupA").click(function () {
-            myHub.server.increment("GroupA");
-        });
-        $("#btnGroupB").click(function () {
-            myHub.server.increment("GroupB");
-        });
-        $("#btnGroupC").click(function () {
-            myHub.server.increment("GroupC");
-        });
-
-        $("#btnAdminGroupA").click(function () {
+        });        
+        $("#lGroupAD").click(function () {
             var _hidVal = $("#hidIn").val();
             myHub.server.decrement("GroupA", _hidVal);
         });
-        $("#btnAdminGroupB").click(function () {
+        $("#lGroupBD").click(function () {
             var _hidVal = $("#hidIn").val();
             myHub.server.decrement("GroupB", _hidVal);
         });
-        $("#btnAdminGroupC").click(function () {
+        $("#lGroupCD").click(function () {
             var _hidVal = $("#hidIn").val();
             myHub.server.decrement("GroupC", _hidVal);
         });
+
+        //div click jquery handlers
+        //$('#divGroupA').click(function (e) {
+        //    myHub.server.increment("GroupA");
+        //});
+        //$('#divGroupB').click(function (e) {
+        //    myHub.server.increment("GroupB");
+        //});
+        //$('#divGroupC').click(function (e) {
+        //    myHub.server.increment("GroupC");
+        //});
+
+        ////Button click jquery handlers
+        //$("#btnGroupA").click(function () {
+        //    myHub.server.increment("GroupA");
+        //});
+        //$("#btnGroupB").click(function () {
+        //    myHub.server.increment("GroupB");
+        //});
+        //$("#btnGroupC").click(function () {
+        //    myHub.server.increment("GroupC");
+        //});
+
+        //$("#btnAdminGroupA").click(function () {
+        //    var _hidVal = $("#hidIn").val();
+        //    myHub.server.decrement("GroupA", _hidVal);
+        //});
+        //$("#btnAdminGroupB").click(function () {
+        //    var _hidVal = $("#hidIn").val();
+        //    myHub.server.decrement("GroupB", _hidVal);
+        //});
+        //$("#btnAdminGroupC").click(function () {
+        //    var _hidVal = $("#hidIn").val();
+        //    myHub.server.decrement("GroupC", _hidVal);
+        //});
     });
        
     // Load the current counts when the hub is ready

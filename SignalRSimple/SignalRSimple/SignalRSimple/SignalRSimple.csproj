@@ -219,6 +219,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\RPC.png" />
     <Content Include="EF\EggHunt.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>EggHunt.edmx</DependentUpon>
